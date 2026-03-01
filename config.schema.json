@@ -119,6 +119,12 @@
                     "enum": [
                       "AirPurifier"
                     ]
+                  },
+                  {
+                    "title": "White Noise Machine",
+                    "enum": [
+                      "WhiteNoiseMachine"
+                    ]
                   }
                 ]
               },
@@ -507,6 +513,67 @@
                 "placeholder": 1,
                 "condition": {
                   "functionBody": "return model.devices && model.devices[arrayIndices] && ['SimpleBlinds'].includes(model.devices[arrayIndices].type);"
+                }
+              },
+              "dpColor": {
+                "title": "Color DP",
+                "type": "integer",
+                "placeholder": 5,
+                "description": "DataPoint for colour_data (HSB hex string). Default: 5.",
+                "condition": {
+                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['WhiteNoiseMachine'].includes(model.devices[arrayIndices].type);"
+                }
+              },
+              "dpMode": {
+                "title": "Mode DP",
+                "type": "integer",
+                "placeholder": 2,
+                "description": "DataPoint for work_mode (scene/customize_scene/colour). Default: 2.",
+                "condition": {
+                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['WhiteNoiseMachine'].includes(model.devices[arrayIndices].type);"
+                }
+              },
+              "useColor": {
+                "title": "Expose Color",
+                "type": "boolean",
+                "description": "Expose Hue, Saturation, and Brightness on the light. Default: true.",
+                "condition": {
+                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['WhiteNoiseMachine'].includes(model.devices[arrayIndices].type);"
+                }
+              },
+              "dpWhiteNoise": {
+                "title": "White Noise DP",
+                "type": "integer",
+                "placeholder": 8,
+                "description": "DataPoint for white noise on/off (switch_music). Default: 8.",
+                "condition": {
+                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['WhiteNoiseMachine'].includes(model.devices[arrayIndices].type);"
+                }
+              },
+              "dpLight": {
+                "title": "Light DP",
+                "type": "integer",
+                "placeholder": 3,
+                "description": "DataPoint for light on/off (switch_led). Default: 3.",
+                "condition": {
+                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['WhiteNoiseMachine'].includes(model.devices[arrayIndices].type);"
+                }
+              },
+              "dpVolume": {
+                "title": "Volume DP",
+                "type": "integer",
+                "placeholder": 9,
+                "description": "DataPoint for volume (volume_set, 0-100). Default: 9. Only used when useVolume is enabled.",
+                "condition": {
+                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['WhiteNoiseMachine'].includes(model.devices[arrayIndices].type);"
+                }
+              },
+              "useVolume": {
+                "title": "Expose Volume",
+                "type": "boolean",
+                "description": "Expose volume as a characteristic on the white noise switch. Default: false.",
+                "condition": {
+                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['WhiteNoiseMachine'].includes(model.devices[arrayIndices].type);"
                 }
               }
             }
