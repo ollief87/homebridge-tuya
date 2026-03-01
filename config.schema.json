@@ -255,14 +255,14 @@
                 "type": "integer",
                 "placeholder": "2",
                 "condition": {
-                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['RGBTWLight', 'RGBTWOutlet'].includes(model.devices[arrayIndices].type);"
+                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['RGBTWLight', 'RGBTWOutlet', 'WhiteNoiseMachine'].includes(model.devices[arrayIndices].type);"
                 }
               },
               "dpColor": {
                 "type": "integer",
                 "placeholder": "5",
                 "condition": {
-                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['RGBTWLight','RGBTWOutlet'].includes(model.devices[arrayIndices].type);"
+                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['RGBTWLight','RGBTWOutlet','WhiteNoiseMachine'].includes(model.devices[arrayIndices].type);"
                 }
               },
               "colorFunction": {
@@ -505,7 +505,7 @@
                 "type": "integer",
                 "placeholder": 1,
                 "condition": {
-                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['RGBTWOutlet'].includes(model.devices[arrayIndices].type);"
+                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['RGBTWOutlet', 'WhiteNoiseMachine'].includes(model.devices[arrayIndices].type);"
                 }
               },
               "dpBlindType": {
@@ -513,24 +513,6 @@
                 "placeholder": 1,
                 "condition": {
                   "functionBody": "return model.devices && model.devices[arrayIndices] && ['SimpleBlinds'].includes(model.devices[arrayIndices].type);"
-                }
-              },
-              "dpColor": {
-                "title": "Color DP",
-                "type": "integer",
-                "placeholder": 5,
-                "description": "DataPoint for colour_data (HSB hex string). Default: 5.",
-                "condition": {
-                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['WhiteNoiseMachine'].includes(model.devices[arrayIndices].type);"
-                }
-              },
-              "dpMode": {
-                "title": "Mode DP",
-                "type": "integer",
-                "placeholder": 2,
-                "description": "DataPoint for work_mode (scene/customize_scene/colour). Default: 2.",
-                "condition": {
-                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['WhiteNoiseMachine'].includes(model.devices[arrayIndices].type);"
                 }
               },
               "useColor": {
@@ -546,15 +528,6 @@
                 "type": "integer",
                 "placeholder": 8,
                 "description": "DataPoint for white noise on/off (switch_music). Default: 8.",
-                "condition": {
-                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['WhiteNoiseMachine'].includes(model.devices[arrayIndices].type);"
-                }
-              },
-              "dpLight": {
-                "title": "Light DP",
-                "type": "integer",
-                "placeholder": 3,
-                "description": "DataPoint for light on/off (switch_led). Default: 3.",
                 "condition": {
                   "functionBody": "return model.devices && model.devices[arrayIndices] && ['WhiteNoiseMachine'].includes(model.devices[arrayIndices].type);"
                 }
